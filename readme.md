@@ -3,6 +3,7 @@
 2. `Pipenv` is used as a packaging tool.
 3. API tesing is done with `POSTMAN`
 4. Generated requirements.txt using `pipenv lock -r > requirements.txt`
+5. Populated the database with the data provided in json format to mysql.
 
 ### How to run the project?
 1. open the terminal change the directory to project.
