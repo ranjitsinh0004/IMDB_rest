@@ -71,18 +71,25 @@ from rest_framework.response import Response
 from rest_framework import status
 
 class MovieList(APIView):
-    """List all movies, or create a new."""
+    """List all movies."""
 
     schema = ImdbMovieSchema()
-    authentication_classes=(TokenAuthentication,)
-    permission_classes=(IsAuthenticated,IsAdminUser)
+    
 
     def get(self, request, format=None):
         movies = Movie.objects.all()
         serializer = MovieSerializer(movies, many=True)
         return Response(serializer.data)
 
+class MovieCreate(APIView):
+    """Create a new movie."""
+
+    schema = ImdbMovieSchema()
+    authentication_classes=(TokenAuthentication,)
+    permission_classes=(IsAuthenticated,IsAdminUser)
+
     def post(self, request, format=None):
+        
         serializer = MovieSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()

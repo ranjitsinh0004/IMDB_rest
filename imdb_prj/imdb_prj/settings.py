@@ -45,8 +45,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    #'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -140,21 +139,3 @@ REST_FRAMEWORK = {
          'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
 
-
-
-from whitenoise.django import DjangoWhiteNoise
-
-    application = DjangoWhiteNoise(application)
-    STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-
-STATIC_ROOT = (os.path.join(BASE_DIR, "static"))
-
-
-import dj_database_url
-
-DATABASES = {
-    'default': dj_database_url.config(
-    default='sqlite:////{0}'.format(os.path.join(BASE_DIR, 'db.sqlite3'))
-    )
-}
