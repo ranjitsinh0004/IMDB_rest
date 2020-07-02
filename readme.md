@@ -1,4 +1,3 @@
-
 ## imdb_prj
 1. For the backend `Django Rest Framework` is used.
 2. `Pipenv` is used as a packaging tool.
