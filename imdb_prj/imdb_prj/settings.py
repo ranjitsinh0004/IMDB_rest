@@ -140,3 +140,9 @@ REST_FRAMEWORK = {
          'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
 
+
+
+from whitenoise.django import DjangoWhiteNoise
+
+    application = DjangoWhiteNoise(application)
+    STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
