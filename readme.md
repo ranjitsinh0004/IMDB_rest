@@ -31,7 +31,7 @@
 
 
 ### Heroku Deployment?
-1. Used git as repository
+1. Used git as repository and version contorl
 2. Committed the repository on `Bitbucket`
 3. Deployed on Heroku. Follow the url `https://imdbeco88.herokuapp.com/`
 
